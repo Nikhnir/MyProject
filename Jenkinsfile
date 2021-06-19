@@ -1,26 +1,27 @@
 pipeline {
+
     agent any
     tools {
-    maven 'maven'
+        maven 'maven'
     }
 
-    Stages {
+    stages {
         //build stage1
-        stage('build'){
+        stage ('Build'){
             steps{
                 sh 'mvn clean install package'
             }
         }
 
         //testing stage2
-        stage('test'){
+        stage ('Test'){
             steps{
                 echo 'testing...'
             }
         }
 
         //deploying stage3
-        stage('deploy'){
+        stage ('Deploy'){
             steps{
                 echo 'deploying.....'
             }
