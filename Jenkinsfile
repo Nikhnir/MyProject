@@ -65,9 +65,10 @@ pipeline {
                 [sshPublisherDesc(
                     configName: 'ansible_controller',
                     transfers: [
-                        sshTransfer(cleanRemote: false,
-                        execCommand: 'ansible-playbook opt/playbooks/downloadanddeploy.yaml -i opt/playbooks/hosts',
-                        execTimeout: 120000,
+                        sshTransfer(
+                            cleanRemote: false,
+                            execCommand: 'ansible-playbook /opt/playbooks/downloadanddeploy.yaml -i /opt/playbooks/hosts',
+                            execTimeout: 120000,
                     )
                 ],
                 usePromotionTimestamp: false,
